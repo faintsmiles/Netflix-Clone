@@ -1,0 +1,57 @@
+[33mcommit ddb4f4f6c86c2ad1e8aabb6e789cc19a1df9a6d5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Brian <faint@DESKTOP-86JCRH9.localdomain>
+Date:   Tue Aug 23 15:52:07 2022 -0700
+
+    Full commit of previously completed project
+
+client/.gitignore
+client/README.md
+client/babel-plugin-macros.config.js
+client/babel.config.js
+client/package-lock.json
+client/package.json
+client/public/favicon.ico
+client/public/index.html
+client/public/logo192.png
+client/public/logo512.png
+client/public/manifest.json
+client/public/robots.txt
+client/src/RouteSwitch.js
+client/src/components/App.jsx
+client/src/components/Dashboard.jsx
+client/src/components/Header.jsx
+client/src/components/Login.jsx
+client/src/components/Modal.jsx
+client/src/components/Row.jsx
+client/src/components/Signup.jsx
+client/src/images/background.jpg
+client/src/images/download.gif
+client/src/images/imageAsset1.jpg
+client/src/images/imageAsset2.png
+client/src/images/netflix.png
+client/src/index.js
+client/src/styles/App.css
+client/src/styles/Dashboard.css
+client/src/styles/Header.css
+client/src/styles/Login.css
+client/src/styles/Modal.css
+client/src/styles/Row.css
+client/src/styles/Signup.css
+client/src/styles/global.css
+server/.env
+server/.gitignore
+server/api/axios.js
+server/app.js
+server/config/passport.js
+server/controllers/apiController.js
+server/controllers/loginController.js
+server/controllers/logoutController.js
+server/controllers/signupController.js
+server/models/User.js
+server/package-lock.json
+server/package.json
+server/routes/api.js
+server/routes/index.js
+server/routes/login.js
+server/routes/logout.js
+server/routes/signup.js

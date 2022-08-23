@@ -1,0 +1,50 @@
+.billboard-container{
+    position: relative;
+    padding-top: 10em;
+    padding-bottom: 2em;
+    background-size: cover;
+    background-position:top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    max-height: 760px;
+    width: 100%;
+}
+
+.billboard-movie-details {
+    width: 40%;
+    min-width: 400px;
+    margin-left: 2.5%;
+    position: absolute;
+    bottom: 90px;
+    font-weight: bold;
+    text-shadow: 1px 1px #000;
+}
+.billboard-movie-details-2 {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+.billboard-movie-title {
+    line-height: 5rem;
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+.billboard-buttons{
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 600px ) {
+    .billboard-movie-details {
+        visibility: hidden;
+    }
+    .billboard-movie-details-2 {
+        visibility: visible;
+        height: auto;
+        width: auto;
+        padding: 0 30px;
+    }
+}
+
+

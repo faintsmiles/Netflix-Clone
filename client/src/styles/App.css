@@ -1,0 +1,69 @@
+.primary-card-container {
+    height: 100%;
+    min-height: 600px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),  rgba(0, 0, 0, 0.5) ,rgba(0, 0, 0, 0.8)), url('../images/background.jpg');
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 8px solid #222;
+    
+}
+
+.primary-card-content-container {
+    text-align: center;
+    width: 50%;
+    min-width: 450px;
+}
+
+#nav-bar {
+    display: flex;
+    max-height: 5em;
+    max-width: 100%;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.nav-options {
+    display: flex;
+    align-items: center;
+}
+
+.nav-options > * {
+    margin-left: 15px;
+}
+
+.primary-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-started-form  {
+    display: flex;
+    justify-content: center;
+}
+
+.get-started-form > input {
+    width: 70%;
+    line-height: 2rem;
+}
+
+.get-started-form > input:focus {
+    outline: none;
+}
+
+.get-started-form > button {
+    width: 30%;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.sign-in {
+    padding: 0 15px;
+}

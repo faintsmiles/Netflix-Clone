@@ -1,0 +1,37 @@
+#signup {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),  rgba(0, 0, 0, 0.5) ,rgba(0, 0, 0, 0.8)), url('../images/background.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    /* height: 380px; */
+    background-color: rgba(1, 1, 1, .8);
+    margin: 50px auto;
+    border-radius: 15px;
+}
+
+#signup-form input, #signup-form button {
+    
+    display: inline-block;
+    width: 400px;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    margin-left: 5%;
+    max-width: 500px;
+}
+
+.warning {
+    color: red !important;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
