@@ -39,7 +39,7 @@ The Movie Database (TMDB) - https://api.themoviedb.org
 # Environment Variables
 MongoDB connection string
 ```bash
-MongoDB="__key__"
+MONGODB="__key__"
 ```
 The Movie Database API key
 ```bash
