@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 import netflix from '../images/netflix.png';
-
-
 import ('../styles/Signup.css')
 
 export default function Signup(props) {
@@ -44,9 +43,9 @@ export default function Signup(props) {
     return (
         <div id='signup' >
             <div className='header-container'>
-                <a href={'/'}>
+                <Link to={'/'}>
                     <img className='netflix' src={netflix} alt="" />
-                </a>
+                </Link>
             </div>
             <form id='signup-form' action='/signup' method='POST' onSubmit={formSubmit}>
                 <h1>Sign Up</h1>

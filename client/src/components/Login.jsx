@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import netflix from '../images/netflix.png';
 
@@ -37,9 +36,9 @@ export default function Login(){
     return(
         <div id='login'>
             <div className='header-container'>
-                <a href={'/'}>
+                <Link to={'/'}>
                     <img className='netflix' src={netflix} alt="" />
-                </a>
+                </Link>
             </div>
             {/*  Rewrite this into a messageState for both redirects/failed logins */}
             <h1> { location.state != null ? location.state.message : "" }</h1>

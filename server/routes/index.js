@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req,res,next) => {
-    res.json({Message: 'Currently in root directory.', Route: '/' })
+   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 })
 
 module.exports = router;

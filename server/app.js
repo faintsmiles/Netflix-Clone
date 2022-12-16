@@ -6,7 +6,6 @@ const passport = require('passport');
 const session = require('express-session');
 const createError = require('http-errors');
 const logger = require('morgan');
-const { body, validationResult } = require('express-validator');
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -21,6 +20,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/build/')));
 
 
 const indexRouter = require('./routes/index')
@@ -34,6 +34,7 @@ app.use('/signup', signupRouter);
 app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
 app.use('/api', apiRouter);
+app.use('*', (req, res, next) => res.redirect('/'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

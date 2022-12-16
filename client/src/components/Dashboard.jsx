@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import Header from './Header';
 import Row from './Row';
 import Modal from './Modal';
@@ -44,6 +44,7 @@ function Billboard (props) {
 
 
 export default function Dashboard() {
+    let navigate = useNavigate();
 
     // Determines number in 'Popular' movie array to be used for billboard info 
     const billboardMovie = Math.floor(Math.random() * 20);
@@ -56,7 +57,7 @@ export default function Dashboard() {
     .then(result => setData(result))
     .catch(() => {
         console.log("Fetch failed, setting redirectURL");
-        window.location.href = '/login'
+        navigate('/login')
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

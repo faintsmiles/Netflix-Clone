@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 import logo from '../images/netflix.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,7 +10,7 @@ import  ('../styles/Header.css')
 
 
 function Header () {
-
+    let navigate = useNavigate();
     // Change nav color when scrolled past it's height 
     const [ navColor,  setNavColor] = useState('');
 
@@ -19,12 +21,12 @@ function Header () {
     
     // Logout method
     const logout = async () => {
-
+        
         fetch('/logout', { credentials: 'include' })
-        .then(() => window.location.href ='/login')
+        .then(() => navigate('/login'))
         .catch(() => {
             console.log("Fetch failed, setting redirectURL");
-            window.location.href = '/login'
+            navigate('/login')
         })
     }
 
@@ -43,35 +45,35 @@ function Header () {
         {/* Collapsed Nav  */}
         <div className='nav-container nav-collapsed nav'  >
             <span>
-                <a href="/">
+                <Link to="/">
                     <img className='netflix' src={logo} alt="netflix" />
-                </a>
+                </Link>
             </span>
             <div className='dropdown nav-container   '>
                 <button className='menu-button' onClick={() => setCollapsedMenu(!collapsedMenu) }>
                     Menu 
                 </button>
                 <div className='dropdown-content' style={{'display': collapsedMenu ? 'block' : 'none' }} onMouseLeave={()=> setCollapsedMenu(false)} >
-                    <a href="/">Notifications</a>
-                    <a href="/">Account</a>
+                    <Link to="/">Notifications</Link>
+                    <Link to="/">Account</Link>
                 </div>
             </div>
         </div>
         {/* Expanded nav   */}
         <div className={`nav-container nav-expanded ${navColor}`}>
             <span>
-                <a href="/">
+                <Link to="/">
                     <img className='netflix' src={logo} alt="netflix" />
-                </a>
+                </Link>
             </span>
             <nav className='nav'>
                 <span>
                     <ul className='nav'>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/">TV Shows</a></li>
-                        <li><a href="/">Movies</a></li>
-                        <li><a href="/">New & Popular</a></li>
-                        <li><a href="/">My List</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/">TV Shows</Link></li>
+                        <li><Link to="/">Movies</Link></li>
+                        <li><Link to="/">New & Popular</Link></li>
+                        <li><Link to="/">My List</Link></li>
                     </ul>
                 </span>
                 <span>
@@ -82,7 +84,7 @@ function Header () {
                                 <FontAwesomeIcon className='icons' icon={regular('bell')} />
                             </li>
                             <div className='expanded-nav-dropdown' style={{'display': notifMenu ? 'block' : 'none'}} onMouseLeave={()=> setNotifMenu(false)}  >
-                                <a href="/">0 notifications</a>
+                                <Link to="/">0 notifications</Link>
                             </div>
                         </div>
                         <div key={'account-container'} className='expanded-nav-dropdown-container'  >
@@ -90,8 +92,8 @@ function Header () {
                                 <FontAwesomeIcon className='icons ' icon={regular('user')} />
                             </li>
                             <div className='expanded-nav-dropdown' style={{'display': accMenu ? 'flex' : 'none'}} onMouseLeave={()=> setAccMenu(false)}   >
-                                <a href="/">Settings</a>
-                                <a href='/' onClick={ (e) => { e.preventDefault(); logout() }}>Log out</a>
+                                <Link to="/">Settings</Link>
+                                <Link to='/' onClick={ (e) => { e.preventDefault(); logout() }}>Log out</Link>
                             </div>
                         </div>
                     </ul>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState} from 'react'
-
+import { useNavigate } from 'react-router-dom';
 import ('../styles/Modal.css')
 
 function Modal({open, closeModal, movie}) {
-
+    let navigate = useNavigate();
     
     const [ movieData, setMovieData ] = useState('');
     const [movieTrailerUrl, setMovieTrailerUrl ] = useState('');
@@ -21,7 +21,7 @@ function Modal({open, closeModal, movie}) {
         .then(result => setMovieData(result))
         .catch(() => {
             console.log('An error occured.');
-            window.location.href = '/login'
+            navigate('/login')
         })
     //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -35,7 +35,6 @@ function Modal({open, closeModal, movie}) {
             const buildTrailerUrl = (movieData.videos.results[0].site === 'YouTube' ? 'https://www.youtube.com/embed/' : 'Vimeo.com/') + movieData.videos.results[0].key; 
             setMovieTrailerUrl(buildTrailerUrl);
         }
-        console.log(movieData)
     },[movieData])
 
     
@@ -70,7 +69,6 @@ function Modal({open, closeModal, movie}) {
                         }
                     </span>
                 </div>
-                {/* <h2>{movieData.tagline}</h2> */}
                 <p className='movie-details-overview'>{movieData.overview}</p>
             </div>
             
