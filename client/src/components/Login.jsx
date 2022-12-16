@@ -30,8 +30,8 @@ export default function Login(){
             body: JSON.stringify(formData)
         })
         .then((result) => result.json())
-        .then((data) => navigate(data.redirectURL))
-        .catch((error) => console.error(error))
+        .then((data) => navigate('/dashboard'))
+        .catch(err => alert("Please verify email and password."))
         
         return;
 }

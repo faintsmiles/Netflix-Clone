@@ -34,8 +34,8 @@ export default function Signup(props) {
                 body: JSON.stringify(formData)
             })
             .then((result) => result.json())
-            .then((data) => navigate(data.redirectURL))
-            .catch((error) => console.error(error))
+            .then((data) => navigate('/dashboard'))
+            .catch(err => alert("Email already exists."))
     }
     return;
 }
