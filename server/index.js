@@ -4,19 +4,28 @@ const express = require('express')
 const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const createError = require('http-errors');
 const logger = require('morgan');
 
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-app.use(session({ secret: process.env.SECRET_KEY, resave: false, saveUninitialized: false }));
+app.use(session({ 
+  secret: process.env.SECRET_KEY, 
+  resave: false, 
+  saveUninitialized: false,
+  store: MongoStore.create({ 
+    mongoUrl: process.env.MONGODB,
+    ttl: 7 * 24 * 60 * 60 // = 14 days. Default
+  })
+}));
 
 require('./config/passport')
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -28,6 +37,7 @@ const signupRouter = require('./routes/signup')
 const loginRouter = require('./routes/login')
 const logoutRouter = require('./routes/logout')
 const apiRouter = require('./routes/api.js');
+
 
 app.use('/', indexRouter);
 app.use('/signup', signupRouter);

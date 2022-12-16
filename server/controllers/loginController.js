@@ -13,7 +13,9 @@ exports.loginAccount = function (req,res,next)  {
         req.logIn( user, function(err) {
             
             if(err) { return next(err); }
-                       
+            
+            req.session.save()
+
             return res.json({
                 redirectURL: '/dashboard',
                 Message: 'Login Successful'
