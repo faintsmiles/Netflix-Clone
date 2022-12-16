@@ -35,7 +35,7 @@ exports.createAccount = [
                     user.save((err) => {
 
                         if(err) return next(err);
-                        
+
                         // On successful user save, log user in and send appropriate redirect URL.
                         req.login(user, function(err) {
                             if(err) {
@@ -47,7 +47,7 @@ exports.createAccount = [
                             }
 
                             console.log('Signup Successful')
-                            req.session.save()
+                            req.session.set()
                             return res.json({
                                 redirectURL: '/dashboard',
                                 Message: 'Signup Successful'

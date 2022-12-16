@@ -14,7 +14,7 @@ exports.loginAccount = function (req,res,next)  {
             
             if(err) { return next(err); }
             
-            req.session.save()
+            req.session.set()
 
             return res.json({
                 redirectURL: '/dashboard',
