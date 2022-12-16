@@ -47,7 +47,7 @@ exports.createAccount = [
                             }
 
                             console.log('Signup Successful')
-                            req.session.set()
+                            req.session.save()
                             return res.json({
                                 redirectURL: '/dashboard',
                                 Message: 'Signup Successful'
