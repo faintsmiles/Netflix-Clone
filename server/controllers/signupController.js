@@ -19,8 +19,6 @@ exports.createAccount = [
         });
 
         if(!errors.isEmpty()) {
-            console.log(req.body)
-
             // Handle error inputs.. Most likely send back error to client and display element ??
             return res.json({Error: errors});
         }

@@ -30,7 +30,10 @@ export default function Login(){
             body: JSON.stringify(formData)
         })
         .then((result) => result.json())
-        .then((info) => navigate(info.redirectURL));
+        .then((data) => navigate(data.redirectURL))
+        .catch((error) => console.error(error))
+        
+        return;
 }
 
     return(

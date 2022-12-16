@@ -16,8 +16,8 @@ exports.loginAccount = function (req,res,next)  {
                        
             return res.json({
                 redirectURL: '/dashboard',
-                Message: 'Authorization successful'    
-            });
+                Message: 'Login Successful'
+            })
         })
 
     })(req,res,next)

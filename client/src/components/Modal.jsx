@@ -17,7 +17,6 @@ function Modal({open, closeModal, movie}) {
             credentials: 'include'
         })
         .then(response => response.json())
-        .then(response => {console.log(response); return response})
         .then(result => setMovieData(result))
         .catch(() => {
             console.log('An error occured.');
